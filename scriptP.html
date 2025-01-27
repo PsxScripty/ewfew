@@ -132,15 +132,13 @@
       position: relative;
       width: 100%;
       max-width: 700px;
-      background: #111;
+      background: #222;
       border-radius: 10px;
       overflow: hidden;
       transition: transform 0.2s;
       opacity: 0;
       animation: fadeIn 1.5s forwards;
       animation-delay: 1.5s;
-      transition: transform 0.2s, opacity 1s ease-in-out;
-      opacity: 0; /* Initially hidden */
     }
 
     .card img {
@@ -284,21 +282,14 @@
     });
 
     const cards = [
-      { title: "Auto Farm Elemental Chest", image: "https://i.ibb.co/h9bFf6L/ps99-elemental-world-3-a730383f51.png" },
-      { title: "Auto Fish", image: "https://i.ibb.co/yg8x1cX/PS99-Minigame-Advanced-Fishing.webp" },
-      { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
-      { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
-      { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
-      { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
-      { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
-      { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
-      { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
-      { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
+      { title: "Auto Farm Elemental Chest", image: "https://i.ibb.co/h9bFf6L/ps99-elemental-world-3-a730383f51.png", link: "ElementalChestAutofarm.html" },
+      { title: "Auto Advanced Fishing", image: "https://i.ibb.co/yg8x1cX/PS99-Minigame-Advanced-Fishing.webp", link: "AdvancedFishing.html" },
+      { title: "Auto Normal Fishing", image: "https://i.ibb.co/KrsNqtH/PS99-Minigame-Fishing.webp", link: "NormalFishing.html" }
     ];
 
     const cardList = document.getElementById("card-list");
 
-    function createCard({ title, image }) {
+    function createCard({ title, image, link }) {
       const card = document.createElement("div");
       card.classList.add("card");
 
@@ -315,7 +306,7 @@
 
       const cardButton = document.createElement("a");
       cardButton.classList.add("card-button");
-      cardButton.href = "#";
+      cardButton.href = link;  // Use the link for each card
       cardButton.textContent = "Get Script";
 
       cardContent.appendChild(cardTitle);
