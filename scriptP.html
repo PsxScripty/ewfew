@@ -90,10 +90,9 @@
       padding: 20px;
     }
 
-    /* Adjusted search-container position */
     .search-container {
       position: relative;
-      margin-bottom: 20px; /* Adjust the margin as needed */
+      margin-bottom: 20px;
       text-align: center;
       z-index: 1;
     }
@@ -101,7 +100,7 @@
     .search-container input {
       width: 90%;
       background: transparent;
-      border: 1px solid white; /* Added stroke (border) */
+      border: 1px solid white;
       color: white;
       max-width: 500px;
       font-weight: 700;
@@ -122,16 +121,12 @@
 
     .card {
       position: relative;
-      width: 130%;
+      width: 100%;
       max-width: 700px;
       background: #111;
       border-radius: 10px;
       overflow: hidden;
       transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: scale(1.02);
     }
 
     .card img {
@@ -146,52 +141,53 @@
       padding: 10px;
       display: flex;
       flex-direction: column;
-      align-items: center; /* This centers the text and button horizontally */
+      align-items: center;
     }
 
     .card-title {
-      font-size: 1.25rem; /* Increased size for better visibility */
-      font-weight: 700; /* Bolder font weight */
+      font-size: 1.25rem;
+      font-weight: 700;
       margin-top: 10px;
-      margin-right: 380px; /* Keeps title aligned towards the left */
-      text-align: left; /* Keeps the text left-aligned within its container */
+      text-align: left;
+      width: 100%;
     }
 
     .card-button {
       padding: 10px 20px;
-      margin-left: 500px; /* Keeps button aligned to the right */
-      margin-top: -35px; /* You may want to adjust this margin for spacing */
+      margin-top: -35px;
       background: transparent;
       border-radius: 10px;
+      margin-left: 500px;
       color: white;
       text-decoration: none;
-      font-size: 1rem; /* Adjusted font size */
+      font-size: 1rem;
+      display: flex;
       font-weight: bold;
       transition: background 0.2s;
     }
 
     .card-button:hover {
       border-color: white;
-      text-shadow: 0 0 10px white; /* Button glow on hover */
+      text-shadow: 0 0 10px white;
     }
 
     @media (max-width: 600px) {
-    .nav-buttons {
-      gap: 10px; /* Smaller gap between buttons */
-    }
-    .nav-buttons a {
-      font-size: 0.875rem; /* Smaller font size for nav links */
-      padding: 0.5rem 0.75rem; /* Adjust padding for nav links */
-    }
-    .card-title {
-      font-size: 0.80rem;
-      text-align: center;
-    }
-    .card-button {
-      padding: 5px 10px;
-      margin-left: 0;
-      margin-top: 10px;
-    }
+      .nav-buttons {
+        gap: 10px;
+      }
+      .nav-buttons a {
+        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+      }
+      .card-title {
+        font-size: 1rem;
+        text-align: center;
+      }
+      .card-button {
+        padding: 5px 10px;
+        margin-left: 0;
+        margin-top: 10px;
+      }
       .card {
         width: 100%;
         max-width: 350px;
@@ -202,7 +198,6 @@
       .search-container input {
         font-size: 0.875rem;
       }
-
       .card {
         width: 100%;
         max-width: 300px;
@@ -257,8 +252,8 @@
 
     const cards = [
       { title: "Auto Farm Elemental Chest", image: "https://i.ibb.co/h9bFf6L/ps99-elemental-world-3-a730383f51.png" },
-      { title: "Auto Fish", image: "https://via.placeholder.com/400x150" },
-      { title: "Auto Chop Trees", image: "https://via.placeholder.com/400x150" },
+      { title: "Auto Fish", image: "https://i.ibb.co/yg8x1cX/PS99-Minigame-Advanced-Fishing.webp" },
+      { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
     ];
 
     const cardList = document.getElementById("card-list");
