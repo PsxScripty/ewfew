@@ -16,7 +16,7 @@
       font-family: 'Inter', sans-serif;
       color: white;
       background: #222;
-      overflow: hidden;
+      overflow: auto;
     }
 
     header {
@@ -30,6 +30,9 @@
       background-color: rgba(0, 0, 0, 0.8);
       z-index: 10;
       height: 70px;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+      animation-delay: 0.5s;
     }
 
     .logo {
@@ -95,6 +98,9 @@
       margin-bottom: 20px;
       text-align: center;
       z-index: 1;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+      animation-delay: 1s;
     }
 
     .search-container input {
@@ -115,8 +121,11 @@
       gap: 20px;
       align-items: center;
       max-height: 500px;
-      overflow-y: auto;
+      overflow-y:hidden;
       padding-right: 10px;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+      animation-delay: 1s;
     }
 
     .card {
@@ -127,6 +136,11 @@
       border-radius: 10px;
       overflow: hidden;
       transition: transform 0.2s;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+      animation-delay: 1.5s;
+      transition: transform 0.2s, opacity 1s ease-in-out;
+      opacity: 0; /* Initially hidden */
     }
 
     .card img {
@@ -142,6 +156,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+      animation-delay: 2s;
     }
 
     .card-title {
@@ -155,6 +172,7 @@
     .card-button {
       padding: 10px 20px;
       margin-top: -35px;
+      font-weight: 800;
       background: transparent;
       border-radius: 10px;
       margin-left: 500px;
@@ -179,6 +197,10 @@
         font-size: 0.875rem;
         padding: 0.5rem 0.75rem;
       }
+      .card-list {
+        max-height: 400px; /* Reduce height on small screens */
+        overflow-y: hidden; /* Make sure it's scrollable on small screens */
+      }
       .card-title {
         font-size: 0.80rem;
         text-align: center;
@@ -202,6 +224,15 @@
       .card {
         width: 100%;
         max-width: 300px;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
       }
     }
   </style>
@@ -257,6 +288,11 @@
       { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
       { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
       { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
+      { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
+      { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
+      { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
+      { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
+      { title: "Auto Chop Trees", image: "https://i.ibb.co/ZNKPC5D/PS99-Minigame-Woodcutting-Game.webp" },
     ];
 
     const cardList = document.getElementById("card-list");
@@ -286,10 +322,24 @@
       card.appendChild(cardImage);
       card.appendChild(cardContent);
       cardList.appendChild(card);
+
+      // Intersection Observer for fade-in effect
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      observer.observe(card);
     }
 
     function loadCards() {
       cards.forEach(createCard);
+      if (cards.length > 4) {
+        cardList.style.maxHeight = '500000px';
+      }
     }
 
     function filterCards() {
