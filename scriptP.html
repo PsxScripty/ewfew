@@ -90,9 +90,10 @@
       padding: 20px;
     }
 
+    /* Adjusted search-container position */
     .search-container {
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 20px; /* Adjust the margin as needed */
       text-align: center;
       z-index: 1;
     }
@@ -100,7 +101,7 @@
     .search-container input {
       width: 90%;
       background: transparent;
-      border: 1px solid white;
+      border: 1px solid white; /* Added stroke (border) */
       color: white;
       max-width: 500px;
       font-weight: 700;
@@ -145,51 +146,53 @@
       padding: 10px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: center; /* This centers the text and button horizontally */
     }
 
     .card-title {
-      font-size: 1.25rem;
-      font-weight: 700;
+      font-size: 1.25rem; /* Increased size for better visibility */
+      font-weight: 700; /* Bolder font weight */
       margin-top: 10px;
-      text-align: left;
+      margin-right: 380px; /* Keeps title aligned towards the left */
+      text-align: left; /* Keeps the text left-aligned within its container */
     }
 
     .card-button {
       padding: 10px 20px;
-      margin-top: -35px;
+      margin-left: 500px; /* Keeps button aligned to the right */
+      margin-top: -35px; /* You may want to adjust this margin for spacing */
       background: transparent;
       border-radius: 10px;
       color: white;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 1rem; /* Adjusted font size */
       font-weight: bold;
       transition: background 0.2s;
     }
 
     .card-button:hover {
       border-color: white;
-      text-shadow: 0 0 10px white;
+      text-shadow: 0 0 10px white; /* Button glow on hover */
     }
 
     @media (max-width: 600px) {
-      .nav-buttons {
-        gap: 10px;
-      }
-      .nav-buttons a {
-        font-size: 0.875rem;
-        padding: 0.5rem 0.75rem;
-      }
-      .card-title {
-        font-size: 0.8rem;
-        text-align: center;
-      }
-      .card-button {
-        font-size: 0.8rem;
-        padding: 5px 10px;
-        margin-left: 0;
-        margin-top: 10px;
-      }
+    .nav-buttons {
+      gap: 10px; /* Smaller gap between buttons */
+    }
+    .nav-buttons a {
+      font-size: 0.875rem; /* Smaller font size for nav links */
+      padding: 0.5rem 0.75rem; /* Adjust padding for nav links */
+    }
+    .card-title {
+      font-size: 0.80rem;
+      text-align: center;
+    }
+    .card-button {
+      padding: 5px 10px;
+      font-size: 0.80rem;
+      margin-left: 0;
+      margin-top: 10px;
+    }
       .card {
         width: 100%;
         max-width: 350px;
@@ -200,6 +203,7 @@
       .search-container input {
         font-size: 0.875rem;
       }
+
       .card {
         width: 100%;
         max-width: 300px;
