@@ -24,17 +24,19 @@
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-        font-size: 4rem;
+        font-size: 4rem; /* Default size for larger screens */
         font-weight: 600;
         color: white;
         text-shadow: 0 0 10px white; /* Keep text glow here */
         opacity: 0;
         animation: fadeIn 2s forwards;
+        width: 90%; /* Make sure the text doesn't stretch off-screen */
+        max-width: 900px; /* Limit the width for large screens */
       }
 
       /* Button styles without glow effect */
       .scripts-button {
-        margin-top: 20px;
+        margin-top: -5px;
         padding: 0.5rem 1rem;
         border: 2px solid white;
         border-radius: 5px;
@@ -56,8 +58,21 @@
       @keyframes fadeIn { to { opacity: 1; } }
 
       @media only screen and (max-width: 600px) {
-        .nav-buttons { gap: 10px; }
-        .nav-buttons a { font-size: 0.875rem; padding: 0.5rem 0.75rem; }
+        .intro-text {
+          font-size: 2.5rem; /* Smaller text for mobile */
+          text-shadow: 0 0 5px white; /* Reduce glow effect on mobile */
+        }
+
+        .scripts-button {
+          font-size: 1.2rem; /* Slightly smaller button text on mobile */
+          padding: 0.5rem 0.8rem; /* Adjust padding */
+        }
+      }
+
+      @media only screen and (max-width: 400px) {
+        .intro-text {
+          font-size: 2rem; /* Further reduce text size for very small screens */
+        }
       }
     </style>
   </head>
