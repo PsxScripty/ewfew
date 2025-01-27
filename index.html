@@ -29,14 +29,14 @@
         color: white;
         text-shadow: 0 0 5px white; /* Keep text glow here */
         opacity: 0;
-        animation: fadeIn 2s forwards;
+        animation: fadeIn 4s forwards;
         width: 90%; /* Make sure the text doesn't stretch off-screen */
         max-width: 900px; /* Limit the width for large screens */
       }
 
       /* Button styles without glow effect */
       .scripts-button {
-        margin-top: -5px;
+        margin-top: 20px;
         padding: 0.5rem 1rem;
         border: 2px solid white;
         border-radius: 5px;
@@ -105,8 +105,8 @@
     <script>
       VANTA.WAVES({
         el: "#vanta-canvas",
-        mouseControls: true,
-        touchControls: true,
+        mouseControls: false,
+        touchControls: false,
         gyroControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
