@@ -86,23 +86,26 @@
     }
 
     main {
-      margin-top: 100px;
+      margin-top: 180px;
       padding: 20px;
     }
 
+    /* Adjusted search-container position */
     .search-container {
-      margin-bottom: 100px;
+      position: relative;
+      margin-bottom: 20px; /* Adjust the margin as needed */
       text-align: center;
-      marghin-top: -100px;
+      z-index: 1;
     }
 
     .search-container input {
       width: 90%;
       background: transparent;
-      border: 1px solid white;
+      border: 1px solid white; /* Added stroke (border) */
+      color: white;
       max-width: 500px;
+      font-weight: 700;
       padding: 10px;
-      border: none;
       border-radius: 5px;
       font-size: 1rem;
     }
@@ -140,41 +143,54 @@
     }
 
     .card-content {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* This centers the text and button horizontally */
-}
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* This centers the text and button horizontally */
+    }
 
-.card-title {
-  font-size: 1.25rem; /* Increased size for better visibility */
-  font-weight: 700; /* Bolder font weight */
-  margin-top: 10px;
-  margin-right: 380px; /* Keeps title aligned towards the left */
-  text-align: left; /* Keeps the text left-aligned within its container */
-}
+    .card-title {
+      font-size: 1.25rem; /* Increased size for better visibility */
+      font-weight: 700; /* Bolder font weight */
+      margin-top: 10px;
+      margin-right: 380px; /* Keeps title aligned towards the left */
+      text-align: left; /* Keeps the text left-aligned within its container */
+    }
 
-.card-button {
-  padding: 10px 20px;
-  margin-left: 500px; /* Keeps button aligned to the right */
-  margin-top: -35px; /* You may want to adjust this margin for spacing */
-  background: transparent;
-  border-radius: 10px;
-  border: 0.001px solid white;
-  color: white;
-  text-decoration: none;
-  font-size: 1rem; /* Adjusted font size */
-  font-weight: bold;
-  transition: background 0.2s;
-}
+    .card-button {
+      padding: 10px 20px;
+      margin-left: 500px; /* Keeps button aligned to the right */
+      margin-top: -35px; /* You may want to adjust this margin for spacing */
+      background: transparent;
+      border-radius: 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem; /* Adjusted font size */
+      font-weight: bold;
+      transition: background 0.2s;
+    }
 
-.card-button:hover {
-  border-color: white;
-  box-shadow: 0 0 10px white; /* Button glow on hover */
-}
-
+    .card-button:hover {
+      border-color: white;
+      text-shadow: 0 0 10px white; /* Button glow on hover */
+    }
 
     @media (max-width: 600px) {
+    .nav-buttons {
+      gap: 10px; /* Smaller gap between buttons */
+    }
+    .nav-buttons a {
+      font-size: 0.875rem; /* Smaller font size for nav links */
+      padding: 0.5rem 0.75rem; /* Adjust padding for nav links */
+    }
+    .card-title {
+      font-size: 0.50rem;
+      margin-right: 200px;
+    }
+    .card-button {
+      padding: 5px 10px;
+      margain-left 250
+    }
       .card {
         width: 100%;
         max-width: 350px;
@@ -200,9 +216,9 @@
     </div>
     <div class="nav-container">
       <div class="nav-buttons">
-        <a href="#home">Home</a>
-        <a href="#scripts">Scripts</a>
-        <a href="#discord">Discord</a>
+        <a href="index.html">Home</a>
+        <a href="scriptsP.html">Scripts</a>
+        <a href="https://discord.gg/jVUAKUECF4">Discord</a>
       </div>
     </div>
   </header>
