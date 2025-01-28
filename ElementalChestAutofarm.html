@@ -24,7 +24,7 @@
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start; /* Align items to the left */
         padding: 0.5rem 1rem;
         background-color: rgba(0, 0, 0, 0.8);
         z-index: 10;
@@ -32,6 +32,7 @@
         opacity: 0;
         animation: fadeIn 1.5s forwards;
         animation-delay: 0.5s;
+        gap: 1rem; /* Add spacing between the logo and nav-buttons */
       }
 
       .logo {
@@ -46,11 +47,8 @@
       }
 
       .nav-container {
-        flex-grow: 1;
         display: flex;
-        justify-content: flex-end;
         align-items: center;
-        height: 100%;
       }
 
       .nav-buttons {
@@ -96,6 +94,7 @@
         animation-delay: 1s;
         position: relative;
         z-index: 1;
+        margin-bottom: 2rem;
       }
 
       .title {
@@ -207,15 +206,15 @@
           font-size: 1rem;
           padding: 0.5rem 1rem;
         }
-
-        .how-it-works ul {
-          padding-left: 1rem;
-        }
         .container {
           margin-bottom: 4rem; /* Ensures extra space at the bottom */
         }
+
         .how-it-works {
           margin-bottom: 2rem; /* Ensures space below this box */
+        }
+        .how-it-works ul {
+          padding-left: 1rem;
         }
         .title {
           font-size: 1.25rem;
