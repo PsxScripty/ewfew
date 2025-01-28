@@ -19,7 +19,12 @@
         min-height: 100vh; /* Ensure the body always takes up at least the full viewport height */
         display: flex;
         flex-direction: column;
+        background-color: #000;
       }
+      html {
+       height: 100%;
+       background-color: #000; /* Ensure the html element also has a background color */
+     }
 
       header {
         position: fixed;
@@ -222,7 +227,7 @@
           font-size: 1rem;
         }
         .how-it-works {
-          max-height: 180px; /* Adjust to prevent too large a height */
+          max-height: 250px; /* Adjust to prevent too large a height */
         }
         .how-it-works ul {
           padding-left: 0.80rem;
@@ -239,7 +244,7 @@
 
         .text-box,
         .how-it-works {
-          flex: 1;
+          flex: 0.50;
         }
 
         .title {
@@ -273,7 +278,7 @@
       <!-- Text Box and How It Works Section -->
       <div class="text-how-container">
         <div class="text-box">
-          <textarea id="text-area" readonly>sucrtk</textarea>
+          <textarea id="text-area" readonly>hi mank</textarea>
           <button onclick="copyToClipboard()">Copy</button>
         </div>
 
