@@ -3,20 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elemental Chest Auto Farm</title>
+    <title>Saturn</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: 'Poppins', sans-serif;
-        color: white;
-        overflow: hidden;
-      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Poppins', sans-serif; color: white; overflow: hidden; }
 
       header {
         position: fixed;
@@ -24,7 +15,7 @@
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: flex-start; /* Align items to the left */
+        justify-content: space-between;
         padding: 0.5rem 1rem;
         background-color: rgba(0, 0, 0, 0.8);
         z-index: 10;
@@ -32,32 +23,21 @@
         opacity: 0;
         animation: fadeIn 1.5s forwards;
         animation-delay: 0.5s;
-        gap: 1rem; /* Add spacing between the logo and nav-buttons */
       }
 
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .logo img {
-        width: 50px;
-        height: 50px;
-      }
+      .logo { display: flex; align-items: center; gap: 10px; }
+      .logo img { width: 60px; height: 60px; }
 
       .nav-container {
+        flex-grow: 1;
         display: flex;
+        justify-content: flex-start;
         align-items: center;
+        height: 100%;
+        padding-left: 20px;
       }
 
-      .nav-buttons {
-        display: flex;
-        gap: 15px;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-      }
-
+      .nav-buttons { display: flex; gap: 15px; flex-wrap: nowrap; overflow-x: auto; }
       .nav-buttons a {
         text-decoration: none;
         color: white;
@@ -70,169 +50,74 @@
         white-space: nowrap;
       }
 
-      .nav-buttons a:hover {
-        background-color: grey;
-        color: black;
-      }
+      .nav-buttons a:hover { background-color: grey; color: black; }
 
-      #vanta-canvas {
-        width: 100%;
-        height: 100vh;
+      #vanta-canvas { width: 100%; height: 100vh; }
+
+      /* Fade in animation for intro-text */
+      .intro-text {
         position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-      }
-
-      .container {
-        max-width: 900px;
-        margin: 1rem auto;
-        padding: 1rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         text-align: center;
+        font-size: 4rem;
+        font-weight: 800;
+        color: white;
         opacity: 0;
-        animation: fadeIn 1.5s forwards;
+        animation: fadeIn 4s forwards;
         animation-delay: 1s;
-        position: relative;
-        z-index: 1;
-        margin-bottom: 2rem;
+        width: 90%;
+        max-width: 900px;
       }
 
-      .title {
+      /* Button styles without glow effect */
+      .scripts-button {
+        margin-top: 10px;
+        padding: 0.5rem 1rem;
+        border: 2px solid white;
+        border-radius: 5px;
+        background: transparent;
         font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        margin-top: 5rem;
-      }
-
-      .video-container {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/9;
-        background-color: #000;
-        margin-bottom: 2rem;
-        position: relative;
-      }
-
-      .video-container iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-
-      .text-how-container {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-      }
-
-      .text-box,
-      .how-it-works {
-        width: 100%;
-      }
-
-      .text-box textarea {
-        width: 100%;
-        height: 100px;
-        font-weight: 600;
-        padding: 0.5rem;
-        border: 2px solid grey;
-        border-radius: 5px;
-        background: transparent;
         color: white;
-        resize: none;
-        font-size: 1rem;
-      }
-
-      .text-box button {
-        padding: 0.8rem 1.5rem;
-        background: transparent;
-        font-size: 1rem;
-        color: white;
-        border: none;
         font-weight: 600;
-        border-radius: 5px;
-        border: 2px solid grey;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        margin-top: 1rem;
+        text-decoration: none;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        animation-delay: 2s;
       }
 
-      .text-box button:hover {
+      /* Glow effect only on hover for the button */
+      .scripts-button:hover {
         border-color: white;
         box-shadow: 0 0 10px white;
       }
 
-      .how-it-works {
-        text-align: left;
-        background: transparent;
-        padding: 1rem;
-        border: 2px solid grey;
-        font-weight: 600;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        opacity: 0;
-        animation: fadeIn 1.5s forwards;
-        animation-delay: 0.5s;
-      }
-
-      .how-it-works h3 {
-        margin-bottom: 0.5rem;
-      }
-
-      .how-it-works ul {
-        list-style-type: decimal;
-        padding-left: 1.5rem;
-      }
-
       @keyframes fadeIn {
-        to {
-          opacity: 1;
-        }
+        to { opacity: 1; }
       }
 
-      /* Responsive Adjustments for Mobile */
       @media only screen and (max-width: 600px) {
-        .nav-buttons {
-          gap: 10px;
+        .intro-text {
+          font-size: 2rem;
+          text-shadow: 0 0 5px white;
         }
-
+        .nav-buttons { gap: 10px; }
         .nav-buttons a {
           font-size: 0.875rem;
           padding: 0.5rem 0.75rem;
         }
-
-        .text-box button {
-          font-size: 1rem;
-          padding: 0.5rem 1rem;
-        }
-        .container {
-          margin-bottom: 4rem; /* Ensures extra space at the bottom */
-        }
-
-        .how-it-works {
-          margin-bottom: 2rem; /* Ensures space below this box */
-        }
-        .how-it-works ul {
-          padding-left: 1rem;
-        }
-        .title {
-          font-size: 1.25rem;
+        .scripts-button {
+          margin-top: 40px;
+          font-size: 1.2rem;
+          padding: 0.5rem 0.8rem;
         }
       }
 
-      @media (min-width: 768px) {
-        .text-how-container {
-          flex-direction: row;
-        }
-
-        .text-box,
-        .how-it-works {
-          flex: 1;
-        }
-
-        .title {
-          font-size: 2rem;
+      @media only screen and (max-width: 400px) {
+        .intro-text {
+          font-size: 1.5rem;
         }
       }
     </style>
@@ -251,32 +136,10 @@
       </div>
     </header>
     <div id="vanta-canvas"></div>
-    <div class="container">
-      <div class="title">Elemental Chest Auto Farm</div>
-
-      <!-- Video Section -->
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-      </div>
-
-      <!-- Text Box and How It Works Section -->
-      <div class="text-how-container">
-        <div class="text-box">
-          <textarea id="text-area" readonly>script here</textarea>
-          <button onclick="copyToClipboard()">Copy</button>
-        </div>
-
-        <div class="how-it-works">
-          <h3>How it works</h3>
-          <ul>
-            <li>It breaks the current chest in the server.</li>
-            <li>If a huge has spawned it catches it then serverhops, same if no huge.</li>
-            <li>That's it, this can easily make you 15-20 huges per day.</li>
-          </ul>
-        </div>
-      </div>
+    <div class="intro-text">
+      <p>Saturn #1 Auto Farm Tool   Earn More, Play Less</p>
+      <a href="scriptP.html" class="scripts-button">Scripts</a>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
     <script>
@@ -295,14 +158,6 @@
         waveSpeed: 0.45,
         zoom: 1.00
       });
-
-      function copyToClipboard() {
-        const textArea = document.getElementById('text-area');
-        textArea.select();
-        textArea.setSelectionRange(0, 99999); // For mobile devices
-        navigator.clipboard.writeText(textArea.value).then(() => {
-        });
-      }
     </script>
   </body>
 </html>
