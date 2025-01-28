@@ -95,6 +95,11 @@
         position: relative;
         z-index: 1;
         margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Ensures all elements are properly spaced */
+        height: 100vh; /* Make the container fit the full screen height */
+        margin-bottom: 0; /* Ensures no extra white space at the bottom */
       }
 
       .title {
@@ -174,8 +179,9 @@
         opacity: 0;
         animation: fadeIn 1.5s forwards;
         animation-delay: 0.5s;
-        overflow-wrap: break-word; /* Ensures text doesn't overflow */
-        word-wrap: break-word; /* Compatibility */
+        max-height: 400px; /* Prevents the box from getting too large */
+        overflow-y: auto;  /* Allows scrolling if content exceeds */
+        word-wrap: break-word;
       }
 
       .how-it-works h3 {
@@ -209,11 +215,12 @@
           padding: 0.5rem 1rem;
         }
         .container {
-         margin-bottom: 6rem; /* Prevent cutoff at the bottom */ /* Ensures extra space at the bottom */
+         margin-bottom: 3rem; /* Prevent cutoff at the bottom */ /* Ensures extra space at the bottom */
         }
 
         .how-it-works {
-         margin-bottom: 3rem; /* Extra space for better usability */
+          max-height: 250px; /* Limits height on mobile */
+          margin-bottom: 1rem; /* Prevents overflow */
         }
         .how-it-works ul {
           padding-left: 1rem;
