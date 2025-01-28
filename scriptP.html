@@ -152,9 +152,8 @@
     .card-content {
       padding: 10px;
       display: flex;
-      flex-direction: row; /* Title and button are side-by-side by default */
-      justify-content: space-between; /* Creates space between title and button */
-      align-items: center; /* Aligns items vertically in the center */
+      flex-direction: column;
+      align-items: center;
       opacity: 0;
       animation: fadeIn 1.5s forwards;
       animation-delay: 2s;
@@ -163,23 +162,24 @@
     .card-title {
       font-size: 1.25rem;
       font-weight: 700;
-      margin-bottom: 10px; /* Add spacing below the title */
-      text-align: left; /* Center-align the title */
+      margin-top: 10px;
+      text-align: left;
       width: 100%;
     }
 
     .card-button {
       padding: 10px 20px;
+      margin-top: -35px;
       font-weight: 800;
       background: transparent;
       border-radius: 10px;
       border: 0.10px solid grey;
+      margin-left: 500px;
       color: white;
       text-decoration: none;
       font-size: 1rem;
       display: flex;
-      justify-content: center;
-      align-items: right;
+      font-weight: bold;
       transition: background 0.2s;
     }
 
@@ -189,11 +189,6 @@
     }
 
     @media (max-width: 600px) {
-      .card-content {
-        flex-direction: column; /* Stack title and button */
-        align-items: center; /* Center everything */
-        padding: 10px;
-      }
       .nav-buttons {
         gap: 10px;
       }
@@ -202,22 +197,22 @@
         padding: 0.5rem 0.75rem;
       }
       .card-list {
-        max-height: 40000px; /* Reduce height on small screens */
+        max-height: 40000000px; /* Reduce height on small screens */
         overflow-y: hidden; /* Make sure it's scrollable on small screens */
       }
       .card-title {
-        font-size: 0.80rem; /* Adjust size for smaller screens */
-        margin-bottom: 10px; /* Add spacing */
+        font-size: 0.70rem;
+        text-align: center;
       }
       .card-button {
-        font-size: 0.875rem;
-        padding: 8px 12px; /* Adjust padding */
-        margin: 0; /* Reset margins */
+        padding: 4px 8px;
+        font-size: 0.70rem;
+        margin-left: 0;
+        margin-top: 5px;
       }
       .card {
-        width: 100%; /* Ensure full width on small screens */
-        max-width: 350px; /* Smaller max width for better fit */
-        margin: 0 auto; /* Center the card horizontally */
+        width: 100%;
+        max-width: 350px;
       }
     }
 
