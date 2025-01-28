@@ -13,9 +13,10 @@
       }
 
       body {
-        font-family: 'Poppins', sans-serif;
-        color: white;
-        overflow-x: hidden;
+          font-family: 'Poppins', sans-serif;
+          color: white;
+          overflow-x: hidden;
+          min-height: 100vh; /* Add this to ensure the body fills the entire viewport height */
       }
 
       header {
@@ -94,12 +95,11 @@
         animation-delay: 1s;
         position: relative;
         z-index: 1;
-        margin-bottom: 2rem;
+        margin-bottom: 0; /* Removed extra margin */
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* Ensures all elements are properly spaced */
-        height: 100vh; /* Make the container fit the full screen height */
-        margin-bottom: 0; /* Ensures no extra white space at the bottom */
+        justify-content: space-between;
+        min-height: 100vh; /* Ensure it fills the screen but doesn't overflow */
       }
 
       .title {
