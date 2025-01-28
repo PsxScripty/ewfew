@@ -163,8 +163,9 @@
     .card-title {
       font-size: 1.25rem;
       font-weight: 700;
-      margin: 0; /* Remove unnecessary top margin */
-      text-align: left;
+      margin-bottom: 10px; /* Add spacing below the title */
+      text-align: left; /* Center-align the title */
+      width: 100%;
     }
 
     .card-button {
@@ -178,8 +179,10 @@
       font-size: 1rem;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: right;
       transition: background 0.2s;
+      margin-top: 10px; /* Add spacing above button */
+      width: fit-content; /* Prevent the button from stretching */
     }
 
     .card-button:hover {
@@ -189,8 +192,9 @@
 
     @media (max-width: 600px) {
       .card-content {
-       flex-direction: column; /* Stack title and button */
-       align-items: center; /* Center align the stacked items */
+        flex-direction: column; /* Stack title and button */
+        align-items: center; /* Center everything */
+        padding: 10px;
       }
       .nav-buttons {
         gap: 10px;
@@ -204,18 +208,18 @@
         overflow-y: hidden; /* Make sure it's scrollable on small screens */
       }
       .card-title {
-        font-size: 1rem;
-        margin-bottom: 10px; /* Add spacing between title and button */
-        text-align: center; /* Center-align text */
+        font-size: 0.80rem; /* Adjust size for smaller screens */
+        margin-bottom: 10px; /* Add spacing */
       }
       .card-button {
-        padding: 6px 10px; /* Adjust padding for smaller screens */
         font-size: 0.875rem;
+        padding: 8px 12px; /* Adjust padding */
         margin: 0; /* Reset margins */
       }
       .card {
-        width: 100%;
-        max-width: 350px;
+        width: 100%; /* Ensure full width on small screens */
+        max-width: 350px; /* Smaller max width for better fit */
+        margin: 0 auto; /* Center the card horizontally */
       }
     }
 
