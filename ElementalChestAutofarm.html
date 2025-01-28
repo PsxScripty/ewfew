@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elemental Chest Auto Farm</title>
+    <title>Saturn</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
       * {
@@ -15,7 +15,7 @@
       body {
         font-family: 'Poppins', sans-serif;
         color: white;
-        overflow: hidden;
+        overflow-x: hidden;
       }
 
       header {
@@ -174,6 +174,8 @@
         opacity: 0;
         animation: fadeIn 1.5s forwards;
         animation-delay: 0.5s;
+        overflow-wrap: break-word; /* Ensures text doesn't overflow */
+        word-wrap: break-word; /* Compatibility */
       }
 
       .how-it-works h3 {
@@ -207,11 +209,11 @@
           padding: 0.5rem 1rem;
         }
         .container {
-          margin-bottom: 4rem; /* Ensures extra space at the bottom */
+         margin-bottom: 6rem; /* Prevent cutoff at the bottom */ /* Ensures extra space at the bottom */
         }
 
         .how-it-works {
-          margin-bottom: 2rem; /* Ensures space below this box */
+         margin-bottom: 3rem; /* Extra space for better usability */
         }
         .how-it-works ul {
           padding-left: 1rem;
