@@ -152,8 +152,9 @@
     .card-content {
       padding: 10px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row; /* Title and button are side-by-side by default */
+      justify-content: space-between; /* Creates space between title and button */
+      align-items: center; /* Aligns items vertically in the center */
       opacity: 0;
       animation: fadeIn 1.5s forwards;
       animation-delay: 2s;
@@ -162,24 +163,22 @@
     .card-title {
       font-size: 1.25rem;
       font-weight: 700;
-      margin-top: 10px;
+      margin: 0; /* Remove unnecessary top margin */
       text-align: left;
-      width: 100%;
     }
 
     .card-button {
       padding: 10px 20px;
-      margin-top: -35px;
       font-weight: 800;
       background: transparent;
       border-radius: 10px;
       border: 0.10px solid grey;
-      margin-left: 500px;
       color: white;
       text-decoration: none;
       font-size: 1rem;
       display: flex;
-      font-weight: bold;
+      justify-content: center;
+      align-items: center;
       transition: background 0.2s;
     }
 
@@ -189,6 +188,10 @@
     }
 
     @media (max-width: 600px) {
+      .card-content {
+       flex-direction: column; /* Stack title and button */
+       align-items: center; /* Center align the stacked items */
+      }
       .nav-buttons {
         gap: 10px;
       }
@@ -201,14 +204,14 @@
         overflow-y: hidden; /* Make sure it's scrollable on small screens */
       }
       .card-title {
-        font-size: 0.70rem;
-        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 10px; /* Add spacing between title and button */
+        text-align: center; /* Center-align text */
       }
       .card-button {
         padding: 6px 10px; /* Adjust padding for smaller screens */
         font-size: 0.875rem;
-        margin-top: 10px;
-        margin-left: 0; /* Reset margin on small screens */
+        margin: 0; /* Reset margins */
       }
       .card {
         width: 100%;
